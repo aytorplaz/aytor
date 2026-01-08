@@ -1,6 +1,27 @@
 import { Zap, Target, Layers, Bot, TrendingUp, Users } from "lucide-react";
 import profile from "@/assets/profile.png";
 
+const timeline = [
+  {
+    period: "2023 - Presente",
+    title: "Especialista en Automatizaciones",
+    company: "Freelance",
+    description: "Desarrollo de flujos de trabajo en GoHighLevel, Make y ClickUp para agencias y empresas."
+  },
+  {
+    period: "2023 - 2024",
+    title: "Creative Director",
+    company: "Red Thread Marketing / The Room",
+    description: "Dirección creativa, estrategias de contenido y gestión de equipos remotos."
+  },
+  {
+    period: "2019 - 2023",
+    title: "Social Media Manager",
+    company: "Marketing 4ACS / Freelance",
+    description: "Gestión de redes sociales, creación de contenido y análisis de data."
+  }
+];
+
 const services = [
   {
     icon: Bot,
@@ -81,6 +102,31 @@ const AboutSection = () => {
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-foreground/5 rounded-3xl -z-10"></div>
+          </div>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="mb-20">
+          <span className="text-sm text-muted-foreground uppercase tracking-wider mb-8 block">
+            Trayectoria
+          </span>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-border"></div>
+            
+            <div className="space-y-8">
+              {timeline.map((item, index) => (
+                <div key={index} className="relative pl-10">
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-foreground"></div>
+                  
+                  <span className="text-sm text-muted-foreground">{item.period}</span>
+                  <h3 className="text-xl font-bold mt-1">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.company}</p>
+                  <p className="text-muted-foreground mt-2">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
