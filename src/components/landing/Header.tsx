@@ -7,12 +7,12 @@ const Header = () => {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full px-4 md:px-8 py-3 flex items-center gap-4 md:gap-10 shadow-lg">
-        <a href="#hero" className="flex items-center flex-shrink-0">
-          <img src={logo} alt="Aytor Plaz" className="h-7 md:h-8 w-auto object-contain" />
+      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full px-5 py-2.5 flex items-center justify-center gap-6 shadow-lg whitespace-nowrap">
+        <a href="#hero" className="flex-shrink-0">
+          <img src={logo} alt="Aytor Plaz" className="h-6 w-auto" />
         </a>
         
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-5">
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Sobre mí
           </a>
@@ -30,7 +30,7 @@ const Header = () => {
           </a>
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           <a 
             href="https://instagram.com/aytorplaz" 
             target="_blank" 
@@ -57,7 +57,7 @@ const Header = () => {
           </a>
           <a 
             href="#contact" 
-            className="bg-foreground text-background px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="bg-foreground text-background px-4 py-1.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Contáctame
           </a>
@@ -65,7 +65,7 @@ const Header = () => {
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground flex-shrink-0"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
