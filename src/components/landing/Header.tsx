@@ -1,13 +1,10 @@
 import { Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo-dark.png";
-
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full px-5 py-2.5 flex items-center justify-center gap-6 shadow-lg whitespace-nowrap">
+  return <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full py-2.5 flex items-center justify-center gap-6 shadow-lg whitespace-nowrap px-[87px]">
         <a href="#hero" className="flex-shrink-0">
           <img src={logo} alt="Aytor Plaz" className="h-6 w-auto" />
         </a>
@@ -31,50 +28,28 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <a 
-            href="https://instagram.com/aytorplaz" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <a href="https://instagram.com/aytorplaz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <Instagram className="w-4 h-4" />
           </a>
-          <a 
-            href="https://linkedin.com/in/aytor" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <a href="https://linkedin.com/in/aytor" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <Linkedin className="w-4 h-4" />
           </a>
-          <a 
-            href="https://fiverr.com/aytorplaz" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-          >
+          <a href="https://fiverr.com/aytorplaz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Fiverr
           </a>
-          <a 
-            href="#contact" 
-            className="bg-foreground text-background px-4 py-1.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
-          >
+          <a href="#contact" className="bg-foreground text-background px-4 py-1.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
             Contáctame
           </a>
         </div>
 
         {/* Mobile menu button */}
-        <button 
-          className="md:hidden text-foreground flex-shrink-0"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+        <button className="md:hidden text-foreground flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden mt-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-lg">
+      {mobileMenuOpen && <div className="md:hidden mt-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-lg">
           <nav className="flex flex-col gap-3">
             <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
               Sobre mí
@@ -93,35 +68,17 @@ const Header = () => {
             </a>
           </nav>
           <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border">
-            <a 
-              href="https://instagram.com/aytorplaz" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <a href="https://instagram.com/aytorplaz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a 
-              href="https://linkedin.com/in/aytor" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <a href="https://linkedin.com/in/aytor" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a 
-              href="https://fiverr.com/aytorplaz" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-            >
+            <a href="https://fiverr.com/aytorplaz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Fiverr
             </a>
           </div>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Header;
