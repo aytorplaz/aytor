@@ -2,6 +2,7 @@ import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import VSLSection from "@/components/landing/VSLSection";
 import AboutSection from "@/components/landing/AboutSection";
+import ServicesSection from "@/components/landing/ServicesSection";
 import ResultsSection from "@/components/landing/ResultsSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import ContactSection from "@/components/landing/ContactSection";
@@ -15,6 +16,7 @@ const Index = () => {
         <Hero />
         <VSLSection />
         <AboutSection />
+        <ServicesSection />
         <ResultsSection />
         <TestimonialsSection />
         <ContactSection />
