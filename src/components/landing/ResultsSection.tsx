@@ -1,36 +1,34 @@
 import { useState, useEffect } from "react";
+import { Bot, Workflow, BarChart3, Globe } from "lucide-react";
 
-// Placeholder images for workflows - these would be replaced with actual screenshots
-const workflowImages = [
+const workflowItems = [
   {
     id: 1,
-    title: "Automatización de Lead Nurturing",
-    description: "Flujo completo de seguimiento automático de leads",
-    placeholder: "bg-gradient-to-br from-secondary to-accent"
+    title: "Bot de Captación",
+    description: "Chatbot inteligente para captar y calificar leads automáticamente 24/7",
+    icon: Bot,
+    gradient: "from-blue-500/20 to-purple-500/20"
   },
   {
     id: 2,
-    title: "Bot de Atención al Cliente",
-    description: "Chatbot inteligente para respuestas 24/7",
-    placeholder: "bg-gradient-to-br from-accent to-secondary"
+    title: "Workflow Automatizado",
+    description: "Flujos de trabajo complejos para automatizar procesos de ventas y marketing",
+    icon: Workflow,
+    gradient: "from-green-500/20 to-teal-500/20"
   },
   {
     id: 3,
-    title: "Pipeline de Ventas Automatizado",
-    description: "Sistema de seguimiento y cierre de ventas",
-    placeholder: "bg-gradient-to-br from-muted to-secondary"
+    title: "Dashboard de Estadísticas",
+    description: "Paneles de control con métricas en tiempo real para tomar decisiones",
+    icon: BarChart3,
+    gradient: "from-orange-500/20 to-red-500/20"
   },
   {
     id: 4,
-    title: "Workflow de Onboarding",
-    description: "Proceso automatizado de bienvenida a nuevos clientes",
-    placeholder: "bg-gradient-to-br from-secondary to-muted"
-  },
-  {
-    id: 5,
-    title: "Sistema de Recordatorios",
-    description: "Automatización de seguimiento y recordatorios",
-    placeholder: "bg-gradient-to-br from-accent to-muted"
+    title: "Web Design con HighLevel",
+    description: "Diseño y desarrollo de páginas web y funnels optimizados para conversión",
+    icon: Globe,
+    gradient: "from-pink-500/20 to-violet-500/20"
   }
 ];
 
@@ -39,10 +37,12 @@ const ResultsSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % workflowImages.length);
+      setCurrentIndex((prev) => (prev + 1) % workflowItems.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
+
+  const CurrentIcon = workflowItems[currentIndex].icon;
 
   return (
     <section id="results" className="py-24 px-6">
@@ -56,33 +56,27 @@ const ResultsSection = () => {
             Automatizaciones que he creado
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Cada workflow está diseñado para resolver problemas específicos y generar resultados medibles.
+            Cada solución está diseñada para resolver problemas específicos y generar resultados medibles.
           </p>
         </div>
 
         {/* Main showcase */}
         <div className="relative mb-12">
-          <div className="aspect-video rounded-2xl overflow-hidden bg-card border border-border shadow-xl">
-            {/* Current workflow display */}
-            <div className={`w-full h-full ${workflowImages[currentIndex].placeholder} flex items-center justify-center`}>
+          <div className={`aspect-video rounded-2xl overflow-hidden bg-gradient-to-br ${workflowItems[currentIndex].gradient} border border-border shadow-xl`}>
+            <div className="w-full h-full flex items-center justify-center backdrop-blur-sm">
               <div className="text-center p-8">
-                <div className="w-16 h-16 rounded-2xl bg-background/20 backdrop-blur-sm flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-8 h-8 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                  </svg>
+                <div className="w-20 h-20 rounded-2xl bg-background/30 backdrop-blur-sm flex items-center justify-center mb-6 mx-auto border border-border/50">
+                  <CurrentIcon className="w-10 h-10 text-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{workflowImages[currentIndex].title}</h3>
-                <p className="text-muted-foreground text-sm">{workflowImages[currentIndex].description}</p>
-                <p className="text-xs text-muted-foreground/60 mt-4">
-                  Imagen de workflow próximamente
-                </p>
+                <h3 className="text-2xl md:text-3xl font-semibold mb-3">{workflowItems[currentIndex].title}</h3>
+                <p className="text-muted-foreground max-w-md mx-auto">{workflowItems[currentIndex].description}</p>
               </div>
             </div>
           </div>
 
           {/* Navigation dots */}
           <div className="flex justify-center gap-2 mt-6">
-            {workflowImages.map((_, index) => (
+            {workflowItems.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
@@ -97,22 +91,26 @@ const ResultsSection = () => {
         </div>
 
         {/* Thumbnails */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {workflowImages.map((workflow, index) => (
-            <button
-              key={workflow.id}
-              onClick={() => setCurrentIndex(index)}
-              className={`aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                index === currentIndex 
-                  ? "border-foreground shadow-lg scale-105" 
-                  : "border-border hover:border-foreground/50"
-              }`}
-            >
-              <div className={`w-full h-full ${workflow.placeholder} flex items-center justify-center`}>
-                <span className="text-xs text-center px-2 font-medium">{workflow.title}</span>
-              </div>
-            </button>
-          ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {workflowItems.map((workflow, index) => {
+            const Icon = workflow.icon;
+            return (
+              <button
+                key={workflow.id}
+                onClick={() => setCurrentIndex(index)}
+                className={`aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 bg-gradient-to-br ${workflow.gradient} ${
+                  index === currentIndex 
+                    ? "border-foreground shadow-lg scale-105" 
+                    : "border-border hover:border-foreground/50"
+                }`}
+              >
+                <div className="w-full h-full flex flex-col items-center justify-center p-4">
+                  <Icon className="w-6 h-6 mb-2 text-foreground" />
+                  <span className="text-xs text-center font-medium">{workflow.title}</span>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>

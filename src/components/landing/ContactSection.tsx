@@ -4,13 +4,13 @@ const ContactSection = () => {
   useEffect(() => {
     // Load the form embed script
     const script = document.createElement('script');
-    script.src = 'https://crm.barbaralcooks.com/js/form_embed.js';
+    script.src = 'https://crm.theplaze.com/js/form_embed.js';
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://crm.barbaralcooks.com/js/form_embed.js"]');
+      const existingScript = document.querySelector('script[src="https://crm.theplaze.com/js/form_embed.js"]');
       if (existingScript) {
         existingScript.remove();
       }
@@ -36,9 +36,9 @@ const ContactSection = () => {
         {/* Form Container */}
         <div className="glass-card p-8 md:p-12">
           <iframe
-            src="https://crm.barbaralcooks.com/widget/form/XyUD4KtVGC3zfE9m0crf"
-            style={{ width: '100%', height: '748px', border: 'none', borderRadius: '4px' }}
-            id="inline-XyUD4KtVGC3zfE9m0crf"
+            src="https://crm.theplaze.com/widget/form/jzx8CZv7bPvua4RLvcfu"
+            style={{ width: '100%', height: '710px', border: 'none', borderRadius: '3px' }}
+            id="inline-jzx8CZv7bPvua4RLvcfu"
             data-layout="{'id':'INLINE'}"
             data-trigger-type="alwaysShow"
             data-trigger-value=""
@@ -46,11 +46,11 @@ const ContactSection = () => {
             data-activation-value=""
             data-deactivation-type="neverDeactivate"
             data-deactivation-value=""
-            data-form-name="Contáctame"
-            data-height="748"
-            data-layout-iframe-id="inline-XyUD4KtVGC3zfE9m0crf"
-            data-form-id="XyUD4KtVGC3zfE9m0crf"
-            title="Contáctame"
+            data-form-name="Form 6"
+            data-height="710"
+            data-layout-iframe-id="inline-jzx8CZv7bPvua4RLvcfu"
+            data-form-id="jzx8CZv7bPvua4RLvcfu"
+            title="Form 6"
           />
         </div>
       </div>

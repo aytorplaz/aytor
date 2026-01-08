@@ -1,17 +1,23 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Menu, X } from "lucide-react";
+import { useState } from "react";
 import logo from "@/assets/logo-dark.png";
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
+      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg">
         <a href="#hero" className="flex items-center">
-          <img src={logo} alt="Aytor Plaz" className="h-8 md:h-10" />
+          <img src={logo} alt="Aytor Plaz" className="h-7 md:h-8" />
         </a>
         
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Sobre mí
+          </a>
+          <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Servicios
           </a>
           <a href="#results" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Resultados
@@ -24,14 +30,14 @@ const Header = () => {
           </a>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4">
           <a 
             href="https://instagram.com/aytorplaz" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Instagram className="w-5 h-5" />
+            <Instagram className="w-4 h-4" />
           </a>
           <a 
             href="https://linkedin.com/in/aytor" 
@@ -39,7 +45,7 @@ const Header = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Linkedin className="w-5 h-5" />
+            <Linkedin className="w-4 h-4" />
           </a>
           <a 
             href="https://fiverr.com/aytorplaz" 
@@ -56,7 +62,64 @@ const Header = () => {
             Contáctame
           </a>
         </div>
+
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden text-foreground"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden mt-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-4 shadow-lg">
+          <nav className="flex flex-col gap-3">
+            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
+              Sobre mí
+            </a>
+            <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
+              Servicios
+            </a>
+            <a href="#results" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
+              Resultados
+            </a>
+            <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
+              Testimonios
+            </a>
+            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
+              Contacto
+            </a>
+          </nav>
+          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border">
+            <a 
+              href="https://instagram.com/aytorplaz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://linkedin.com/in/aytor" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://fiverr.com/aytorplaz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+            >
+              Fiverr
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
