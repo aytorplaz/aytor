@@ -79,7 +79,7 @@ const TestimonialsSection = () => {
         {/* Fiverr link */}
         <div className="text-center mt-12">
           <a
-            href="https://fiverr.com/aytorplaz"
+            href="https://fiverr.com/aytorw"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
