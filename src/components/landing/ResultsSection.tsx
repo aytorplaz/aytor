@@ -64,7 +64,7 @@ const ResultsSection = () => {
           <div className="aspect-video rounded-2xl overflow-hidden border border-border shadow-xl bg-muted">
             <img src={workflowItems[currentIndex].image} alt={workflowItems[currentIndex].title} className="w-full h-full object-cover object-top" />
             {/* Overlay con título */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 my-[19px]">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 my-[33px] rounded-lg">
               <h3 className="text-xl md:text-2xl font-semibold">{workflowItems[currentIndex].title}</h3>
               <p className="text-muted-foreground text-sm md:text-base">{workflowItems[currentIndex].description}</p>
             </div>
