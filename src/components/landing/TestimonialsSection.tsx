@@ -10,26 +10,24 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "María L.",
-    role: "Fundadora, E-commerce",
-    content:
-      "Profesional, puntual y con resultados excepcionales. El sistema de seguimiento de leads que creó aumentó nuestras conversiones en un 40%.",
+    name: "Daniela Cifelli.",
+    role: "CEO de Scale Pro",
+    content: "Ha hecho un excelente trabajo, profesional con resultados excepcionales.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Roberto S.",
-    role: "Director, Consultoría",
+    name: "Barbara Lopez.",
+    role: "Creadora de contenido en Barbara Cooks",
     content:
-      "Excelente trabajo en la implementación de GoHighLevel. Todo el proceso fue claro y el soporte post-implementación impecable.",
+      "Encantada con el trabajo de Aytor, hemos trabajado por 2 años y seguimos innovando y creciendo en ventas.",
     rating: 5,
   },
   {
     id: 4,
-    name: "Ana G.",
-    role: "CMO, Startup Tech",
-    content:
-      "Las estrategias multicanal que diseñó nos ayudaron a triplicar nuestro alcance en 3 meses. Muy recomendado.",
+    name: "Fernanda Ortiz.",
+    role: "CEO Purple Real State",
+    content: "Me ha encantado trabajar con Aytor, solucionó problemas de HighLevel en mi campaña de septiembre.",
     rating: 5,
   },
 ];
