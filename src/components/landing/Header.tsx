@@ -6,8 +6,8 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
-      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full px-6 py-3 flex items-center gap-8 shadow-lg">
         <a href="#hero" className="flex items-center">
           <img src={logo} alt="Aytor Plaz" className="h-7 md:h-8" />
         </a>
