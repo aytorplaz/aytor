@@ -34,7 +34,7 @@ const Header = () => {
           <a href="https://linkedin.com/in/aytor" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <Linkedin className="w-4 h-4" />
           </a>
-          <a href="https://fiverr.com/aytorplaz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+          <a target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium" href="https://fiverr.com/aytorw">
             Fiverr
           </a>
           <a href="#contact" className="bg-foreground text-background px-4 py-1.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
