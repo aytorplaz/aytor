@@ -1,12 +1,20 @@
 import { useState, useEffect } from "react";
 import { Bot, Workflow, BarChart3, Globe } from "lucide-react";
 
+// Imágenes placeholder - reemplaza estas rutas con tus imágenes
+// Para reemplazar: sube tus imágenes a src/assets/ y actualiza las rutas
+import resultBot from "@/assets/result-bot.jpg";
+import resultWorkflow from "@/assets/result-workflow.jpg";
+import resultDashboard from "@/assets/result-dashboard.jpg";
+import resultWeb from "@/assets/result-web.jpg";
+
 const workflowItems = [
   {
     id: 1,
     title: "Bot de Captación",
     description: "Chatbot inteligente para captar y calificar leads automáticamente 24/7",
     icon: Bot,
+    image: resultBot,
     gradient: "from-blue-500/20 to-purple-500/20"
   },
   {
@@ -14,6 +22,7 @@ const workflowItems = [
     title: "Workflow Automatizado",
     description: "Flujos de trabajo complejos para automatizar procesos de ventas y marketing",
     icon: Workflow,
+    image: resultWorkflow,
     gradient: "from-green-500/20 to-teal-500/20"
   },
   {
@@ -21,6 +30,7 @@ const workflowItems = [
     title: "Dashboard de Estadísticas",
     description: "Paneles de control con métricas en tiempo real para tomar decisiones",
     icon: BarChart3,
+    image: resultDashboard,
     gradient: "from-orange-500/20 to-red-500/20"
   },
   {
@@ -28,6 +38,7 @@ const workflowItems = [
     title: "Web Design con HighLevel",
     description: "Diseño y desarrollo de páginas web y funnels optimizados para conversión",
     icon: Globe,
+    image: resultWeb,
     gradient: "from-pink-500/20 to-violet-500/20"
   }
 ];
@@ -41,8 +52,6 @@ const ResultsSection = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
-  const CurrentIcon = workflowItems[currentIndex].icon;
 
   return (
     <section id="results" className="py-24 px-6">
@@ -62,15 +71,16 @@ const ResultsSection = () => {
 
         {/* Main showcase */}
         <div className="relative mb-12">
-          <div className={`aspect-video rounded-2xl overflow-hidden bg-gradient-to-br ${workflowItems[currentIndex].gradient} border border-border shadow-xl`}>
-            <div className="w-full h-full flex items-center justify-center backdrop-blur-sm">
-              <div className="text-center p-8">
-                <div className="w-20 h-20 rounded-2xl bg-background/30 backdrop-blur-sm flex items-center justify-center mb-6 mx-auto border border-border/50">
-                  <CurrentIcon className="w-10 h-10 text-foreground" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-semibold mb-3">{workflowItems[currentIndex].title}</h3>
-                <p className="text-muted-foreground max-w-md mx-auto">{workflowItems[currentIndex].description}</p>
-              </div>
+          <div className="aspect-video rounded-2xl overflow-hidden border border-border shadow-xl bg-muted">
+            <img 
+              src={workflowItems[currentIndex].image} 
+              alt={workflowItems[currentIndex].title}
+              className="w-full h-full object-cover object-top"
+            />
+            {/* Overlay con título */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
+              <h3 className="text-xl md:text-2xl font-semibold">{workflowItems[currentIndex].title}</h3>
+              <p className="text-muted-foreground text-sm md:text-base">{workflowItems[currentIndex].description}</p>
             </div>
           </div>
 
@@ -93,24 +103,33 @@ const ResultsSection = () => {
         {/* Thumbnails */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {workflowItems.map((workflow, index) => {
-            const Icon = workflow.icon;
             return (
               <button
                 key={workflow.id}
                 onClick={() => setCurrentIndex(index)}
-                className={`aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 bg-gradient-to-br ${workflow.gradient} ${
+                className={`aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                   index === currentIndex 
                     ? "border-foreground shadow-lg scale-105" 
                     : "border-border hover:border-foreground/50"
                 }`}
               >
-                <div className="w-full h-full flex flex-col items-center justify-center p-4">
-                  <Icon className="w-6 h-6 mb-2 text-foreground" />
-                  <span className="text-xs text-center font-medium">{workflow.title}</span>
-                </div>
+                <img 
+                  src={workflow.image} 
+                  alt={workflow.title}
+                  className="w-full h-full object-cover object-top"
+                />
               </button>
             );
           })}
+        </div>
+
+        {/* Labels */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
+          {workflowItems.map((workflow) => (
+            <span key={workflow.id} className="text-xs text-center text-muted-foreground">
+              {workflow.title}
+            </span>
+          ))}
         </div>
       </div>
     </section>
