@@ -37,7 +37,7 @@ const VSLSection = () => {
             <div className="text-sm text-muted-foreground">Años de experiencia</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold mb-1">70+</div>
+            <div className="text-3xl md:text-4xl font-bold mb-1">100+</div>
             <div className="text-sm text-muted-foreground">Automatizaciones creadas</div>
           </div>
           <div className="text-center">
