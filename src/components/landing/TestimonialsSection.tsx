@@ -26,7 +26,7 @@ const testimonials = [
   {
     id: 4,
     name: "Fernanda Ortiz.",
-    role: "CEO Purple Real State",
+    role: "CEO de Purple Real State",
     content: "Me ha encantado trabajar con Aytor, solucionó problemas de HighLevel en mi campaña de septiembre.",
     rating: 5,
   },
