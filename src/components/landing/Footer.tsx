@@ -31,25 +31,25 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            <a 
-              href="https://instagram.com/aytorplaz" 
-              target="_blank" 
+            <a
+              href="https://instagram.com/aytorplaz"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
             >
               <Instagram className="w-5 h-5" />
             </a>
-            <a 
-              href="https://linkedin.com/in/aytor" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/aytor"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a 
-              href="https://fiverr.com/aytorplaz" 
-              target="_blank" 
+            <a
+              href="https://fiverr.com/aytorplaz"
+              target="_blank"
               rel="noopener noreferrer"
               className="px-4 h-10 rounded-full bg-secondary flex items-center justify-center text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
             >
@@ -61,7 +61,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Aytor Plaz. Todos los derechos reservados.
+            © {currentYear} Aytor Plaz por PLAZE GROUP LLC. Todos los derechos reservados.
           </p>
         </div>
       </div>
