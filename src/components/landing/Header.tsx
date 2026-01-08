@@ -7,9 +7,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full px-6 py-3 flex items-center gap-8 shadow-lg">
-        <a href="#hero" className="flex items-center">
-          <img src={logo} alt="Aytor Plaz" className="h-7 md:h-8" />
+      <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-full px-4 md:px-8 py-3 flex items-center gap-4 md:gap-10 shadow-lg">
+        <a href="#hero" className="flex items-center flex-shrink-0">
+          <img src={logo} alt="Aytor Plaz" className="h-7 md:h-8 w-auto object-contain" />
         </a>
         
         <nav className="hidden md:flex items-center gap-6">
