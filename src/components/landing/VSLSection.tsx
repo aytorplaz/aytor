@@ -1,6 +1,5 @@
 const VSLSection = () => {
-  return (
-    <section id="vsl" className="py-24 px-6">
+  return <section id="vsl" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -18,7 +17,7 @@ const VSLSection = () => {
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-foreground/10 flex items-center justify-center mb-4 mx-auto hover:bg-foreground/20 transition-colors cursor-pointer group">
                 <svg className="w-8 h-8 text-foreground group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
+                  <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -34,7 +33,7 @@ const VSLSection = () => {
         {/* Stats below video */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold mb-1">5+</div>
+            <div className="text-3xl md:text-4xl font-bold mb-1">7+</div>
             <div className="text-sm text-muted-foreground">Años de experiencia</div>
           </div>
           <div className="text-center">
@@ -51,8 +50,6 @@ const VSLSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default VSLSection;
