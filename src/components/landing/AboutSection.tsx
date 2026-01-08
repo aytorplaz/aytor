@@ -73,7 +73,7 @@ const AboutSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="text-center md:text-left">
+          <div>
             <span className="text-sm text-muted-foreground uppercase tracking-wider mb-4 block">
               Sobre mí
             </span>
@@ -92,7 +92,7 @@ const AboutSection = () => {
             </p>
             
             {/* Skills tags */}
-            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-2">
               {["GoHighLevel", "CRM", "Zapier", "Social Media", "Project Management", "Diseño UX/UI", "Dirección Creativa"].map((skill) => (
                 <span 
                   key={skill}
@@ -104,8 +104,8 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="relative order-first md:order-last">
-            <div className="aspect-square rounded-3xl overflow-hidden bg-secondary border border-border max-w-sm mx-auto md:max-w-none">
+          <div className="relative">
+            <div className="aspect-square rounded-3xl overflow-hidden bg-secondary border border-border">
               <img 
                 src={profile} 
                 alt="Aytor Plaz" 
@@ -113,33 +113,31 @@ const AboutSection = () => {
               />
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-foreground/5 rounded-3xl -z-10 hidden md:block"></div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-foreground/5 rounded-3xl -z-10"></div>
           </div>
         </div>
 
         {/* Timeline + Services Grid */}
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Timeline */}
-          <div className="text-center lg:text-left">
+          <div>
             <span className="text-sm text-muted-foreground uppercase tracking-wider mb-8 block">
               Trayectoria
             </span>
-            <div className="relative inline-block lg:block w-full">
-              {/* Timeline line - centered on mobile */}
-              <div className="absolute left-1/2 lg:left-[7px] -translate-x-1/2 lg:translate-x-0 top-2 bottom-2 w-[2px] bg-border"></div>
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-border"></div>
               
               <div className="space-y-6">
                 {timeline.map((item, index) => (
-                  <div key={index} className="relative px-8 lg:pl-10 lg:pr-0">
-                    {/* Timeline dot - centered on mobile */}
-                    <div className="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 top-1 w-4 h-4 rounded-full bg-foreground"></div>
+                  <div key={index} className="relative pl-10">
+                    {/* Timeline dot */}
+                    <div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-foreground"></div>
                     
-                    <div className="pt-8 lg:pt-0">
-                      <span className="text-sm text-muted-foreground">{item.period}</span>
-                      <h3 className="text-lg font-bold mt-1">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.company}</p>
-                      <p className="text-muted-foreground text-sm mt-1">{item.description}</p>
-                    </div>
+                    <span className="text-sm text-muted-foreground">{item.period}</span>
+                    <h3 className="text-lg font-bold mt-1">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm">{item.company}</p>
+                    <p className="text-muted-foreground text-sm mt-1">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -147,7 +145,7 @@ const AboutSection = () => {
           </div>
 
           {/* Services */}
-          <div className="text-center lg:text-left">
+          <div>
             <span className="text-sm text-muted-foreground uppercase tracking-wider mb-8 block">
               Especialidades
             </span>
@@ -155,9 +153,9 @@ const AboutSection = () => {
               {services.map((service, index) => (
                 <div 
                   key={index}
-                  className="glass-card p-4 hover:border-foreground/20 transition-colors group text-center lg:text-left"
+                  className="glass-card p-4 hover:border-foreground/20 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-foreground/5 flex items-center justify-center mb-3 group-hover:bg-foreground/10 transition-colors mx-auto lg:mx-0">
+                  <div className="w-10 h-10 rounded-xl bg-foreground/5 flex items-center justify-center mb-3 group-hover:bg-foreground/10 transition-colors">
                     <service.icon className="w-5 h-5" />
                   </div>
                   <h3 className="text-sm font-semibold">{service.title}</h3>
