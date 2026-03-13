@@ -62,7 +62,7 @@ const ServicesSection = () => {
         {/* CTA Button */}
         <div className="text-center">
           <a
-            href="https://crm.theplaze.com/widget/booking/Cw1enXaPZ6lMGHyIAC60"
+            href="https://crm.theplaze.com/widget/booking/LuXYVYDmV2WeuwQHGDgN"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full text-base font-medium hover:opacity-90 transition-opacity"
