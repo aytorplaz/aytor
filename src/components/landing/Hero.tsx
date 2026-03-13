@@ -37,7 +37,9 @@ const Hero = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a 
-            href="#contact"
+            href="https://crm.theplaze.com/widget/booking/LuXYVYDmV2WeuwQHGDgN"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-foreground text-background px-8 py-4 rounded-full text-base font-medium hover:opacity-90 transition-opacity"
           >
             Agenda una consulta

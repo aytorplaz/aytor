@@ -36,21 +36,11 @@ const ContactSection = () => {
         {/* Form Container */}
         <div className="glass-card p-8 md:p-12">
           <iframe
-            src="https://crm.theplaze.com/widget/form/jzx8CZv7bPvua4RLvcfu"
-            style={{ width: '100%', height: '710px', border: 'none', borderRadius: '3px' }}
-            id="inline-jzx8CZv7bPvua4RLvcfu"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Form 6"
-            data-height="710"
-            data-layout-iframe-id="inline-jzx8CZv7bPvua4RLvcfu"
-            data-form-id="jzx8CZv7bPvua4RLvcfu"
-            title="Form 6"
+            src="https://crm.theplaze.com/widget/booking/LuXYVYDmV2WeuwQHGDgN"
+            style={{ width: '100%', border: 'none', overflow: 'hidden' }}
+            scrolling="no"
+            id="LuXYVYDmV2WeuwQHGDgN_1773436697016"
+            title="Booking Calendar"
           />
         </div>
       </div>
